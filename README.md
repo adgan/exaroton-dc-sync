@@ -6,7 +6,7 @@ This project connects the Minecraft hosting provider Exaroton with Discord via a
 
 - **bot/**: Contains the Discord bot built with `discord.js` in TypeScript, allowing server control via Discord commands.
 - **frontend/**: A Vite-React application built with TypeScript, where users can log in with Discord and enter their Exaroton API key. This component provides the user interface for managing the connection.
-- **backend/**: A Node.js Express API server that handles database communication with MongoDB and manages user data securely.
+- **backend/**: A Node.js Express API server that handles database communication with MongoDB and manages data securely.
 
 ## Features
 
