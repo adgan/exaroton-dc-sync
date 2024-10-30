@@ -17,10 +17,12 @@
     ];
     workspace = {
       onCreate = {
-        npm-install = "npm ci --no-audit --prefer-offline --no-progress --timing";
+        npm-bot-install = "cd bot && npm ci --no-audit --prefer-offline --no-progress --timing";
+        npm-frontend-install = "cd frontend && npm ci --no-audit --prefer-offline --no-progress --timing";
       };
       onStart= {
-        run-server = "npm run dev";
+        bot-run = "cd bot && npm run dev";
+        npm-frontend-install = "cd frontend && npm run dev";
       };
     };
   };
