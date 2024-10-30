@@ -109,4 +109,4 @@ This project is licensed under the MIT License.
 
 ## Google IDX
 
-This project exists because I wanted to use the [Project IDX](<https://idx.google.com>). That is why there is a .idx folder.
+This project exists because I wanted to use/test the [Project IDX](<https://idx.google.com>). That is why there is a .idx folder.
