@@ -82,7 +82,7 @@ This project connects the Minecraft hosting provider Exaroton with Discord via a
 
       ```bash
       cd bot
-      npm start
+      npm run dev
       ```
 
     - **Frontend**:
@@ -96,7 +96,7 @@ This project connects the Minecraft hosting provider Exaroton with Discord via a
 
       ```bash
       cd ../backend
-      npm start
+      npm run dev
       ```
 
 ## Contributing
