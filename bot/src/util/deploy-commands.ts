@@ -1,8 +1,9 @@
 import { REST, Routes } from "discord.js";
-import { commands } from "./commands";
-import { config } from "dotenv";
-import { DISCORD_CLIENT_ID, DISCORD_TOKEN } from "./config/config";
-import { logger } from "./utils/logger";
+import { commands } from "../commands";
+import { DISCORD_CLIENT_ID, DISCORD_TOKEN } from "../config/config";
+import { Logger } from "./logger";
+
+const logger = new Logger("deploy-commands");
 
 if (!DISCORD_TOKEN || !DISCORD_CLIENT_ID) {
     throw new Error("Missing environment variables");
@@ -29,6 +30,6 @@ export async function deployCommands({ guildId }: DeployCommandsProps) {
 
     logger.info("Successfully reloaded application (/) commands.");
   } catch (error) {
-    logger.error(error);
+    logger.error("Failed to refresh application (/) commands.", error);
   }
 }
