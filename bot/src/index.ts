@@ -1,8 +1,10 @@
 import { Client, GatewayIntentBits, Events } from 'discord.js';
 import { DISCORD_TOKEN, DISCORD_CLIENT_ID } from './config/config';
 import { commands } from './commands';
-import { deployCommands } from './deploy-commands';
-import { logger } from './utils/logger';
+import { deployCommands } from './util/deploy-commands';
+import { Logger } from './util/logger';
+
+const logger = new Logger("BotMain");
 
 if (!DISCORD_TOKEN || !DISCORD_CLIENT_ID) {
   throw new Error("Missing environment variables");
@@ -27,8 +29,9 @@ client.on("interactionCreate", async (interaction) => {
   if (!interaction.isCommand()) {
     return;
   }
-  const { commandName } = interaction;
+  const { commandName, channel, guild } = interaction;
   if (commands[commandName as keyof typeof commands]) {
+    logger.info(`[${guild}/${channel?.toString() || 'DM'}]: exec ${commandName}`);
     commands[commandName as keyof typeof commands].execute(interaction);
   }
 });
