@@ -20,7 +20,14 @@ export class ExarotonService {
     };
 
     public getAccountInfo = async (): Promise<any> => {
-        const account = await this.exarotonClient.getAccountInfo();
+        this.logger.info("getAccountInfo triggered");
+        const account = await this.exarotonClient.getAccount();
+        this.logger.info("getAccountInfo returned");
+        return account;
+    };
+
+    public getServerStatus = async (): Promise<any> => {
+        // Implement logic to get server status
 
     };
 

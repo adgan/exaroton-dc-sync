@@ -1,39 +1,24 @@
-import { Client, GatewayIntentBits, Events } from 'discord.js';
-import { DISCORD_TOKEN, DISCORD_CLIENT_ID } from './config/config';
-import { commands } from './commands';
-import { deployCommands } from './util/deploy-commands';
+import { DISCORD_TOKEN, DISCORD_CLIENT_ID, EXAROTON_TOKEN } from './config/config';
 import { Logger } from './util/logger';
+import { DiscordService } from './service/DiscordService';
+import { ExarotonService } from './service/ExarotonService';
 
 const logger = new Logger("BotMain");
-
-if (!DISCORD_TOKEN || !DISCORD_CLIENT_ID) {
-  throw new Error("Missing environment variables");
+if (!DISCORD_TOKEN) {
+  logger.error("Missing DISCORD_TOKEN")
+  throw new Error("Missing DISCORD_TOKEN");
 }
+if (!DISCORD_CLIENT_ID) {
+  logger.error("Missing DISCORD_CLIENT_ID")
+  throw new Error("Missing DISCORD_CLIENT_ID");
+}
+if (!EXAROTON_TOKEN) {
+  logger.error("Missing EXAROTON_TOKEN")
+  throw new Error("Missing EXAROTON_TOKEN");
+}
+export const exarotonService = new ExarotonService(EXAROTON_TOKEN);
+
+new DiscordService(DISCORD_TOKEN, DISCORD_CLIENT_ID);
 
 
-const client = new Client({
-  intents: ["Guilds", "GuildMessages", "DirectMessages"],
-});
 
-
-client.once("ready", () => {
-  logger.info("Discord bot is ready! 🤖");
-});
-
-client.on("guildCreate", async (guild) => {
-  await deployCommands({ guildId: guild.id });
-  logger.info(`Joined guild: ${guild.name}`);
-});
-
-client.on("interactionCreate", async (interaction) => {
-  if (!interaction.isCommand()) {
-    return;
-  }
-  const { commandName, channel, guild } = interaction;
-  if (commands[commandName as keyof typeof commands]) {
-    logger.info(`[${guild}/${channel?.toString() || 'DM'}]: exec ${commandName}`);
-    commands[commandName as keyof typeof commands].execute(interaction);
-  }
-});
-
-client.login(DISCORD_TOKEN);
