@@ -12,16 +12,18 @@
   "author": "adgan",
   "license": "MIT",
   "dependencies": {
+    "@mongodb-js/zstd": "^1.2.2",
     "discord.js": "14.16.3",
     "dotenv": "^16.4.5",
     "exaroton": "^1.11.3",
     "express": "^4.19.2",
+    "mongodb": "^6.10.0",
     "pino": "^7.0.0-rc.9"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
     "@types/exaroton": "^1.11.0",
-    "@types/node": "^20.12.12",
+    "@types/node": "^20.17.6",
     "eslint": "^9.13.0",
     "globals": "^15.11.0",
     "nodemon": "^3.1.0",
