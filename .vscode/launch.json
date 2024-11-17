@@ -1,0 +1,55 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Bot DEV",
+            "request": "launch",
+            "runtimeArgs": [
+                "run",
+                "dev",
+                "-w",
+                "bot"
+            ],
+            "runtimeExecutable": "npm",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+        {
+            "name": "Frontend DEV",
+            "request": "launch",
+            "runtimeArgs": [
+                "run",
+                "dev",
+                "-w",
+                "frontend"
+            ],
+            "runtimeExecutable": "npm",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+        {
+            "name": "Backend DEV",
+            "request": "launch",
+            "runtimeArgs": [
+                "run",
+                "dev",
+                "-w",
+                "backend"
+            ],
+            "runtimeExecutable": "npm",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        }
+        
+
+    ]
+}
