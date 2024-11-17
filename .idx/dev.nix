@@ -19,12 +19,12 @@
       onCreate = {
         npm-bot-install = "cd bot && npm ci --no-audit --prefer-offline --no-progress --timing";
         npm-frontend-install = "cd frontend && npm ci --no-audit --prefer-offline --no-progress --timing";
-        npm-backend-install = "cd backend && npm ci --no-audit --prefer-offline --no-progress --timing";
+        npm-functions-install = "cd functions && npm ci --no-audit --prefer-offline --no-progress --timing";
       };
       onStart= {
         bot-run = "cd bot && npm ci && npm run dev";
         npm-frontend-run = "cd frontend && npm ci && npm run dev";
-        npm-backend-run = "cd backend && npm ci && npm run dev";
+        npm-functions-run = "cd functions && npm ci && npm run dev";
       };
     };
   };

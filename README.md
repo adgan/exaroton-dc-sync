@@ -6,20 +6,20 @@ This project connects the Minecraft hosting provider Exaroton with Discord via a
 
 - **bot/**: Contains the Discord bot built with `discord.js` in TypeScript, allowing server control via Discord commands.
 - **frontend/**: A Vite-React application built with TypeScript, where users can log in with Discord and enter their Exaroton API key. This component provides the user interface for managing the connection.
-- **backend/**: A Node.js Express API server that handles database communication with MongoDB and manages data securely.
+- **functions/**: A Firebase Functions setup that handles backend logic and database communication.
 
 ## Features
 
 - **Discord Bot**: Provides commands to control Exaroton servers directly from Discord.
 - **User Authentication**: Allows users to log in with their Discord account on the frontend.
 - **Exaroton Integration**: Enables users to link and manage their Exaroton server with their Discord account.
-- **MongoDB Database**: Stores user data, including Exaroton API keys, securely.
+- **Firebase Functions**: Handles backend logic and database communication securely.
 
-## Technologies
+## Stack
 
 - **bot/**: `discord.js`, TypeScript
 - **frontend/**: Vite, React, TypeScript, Discord OAuth2
-- **backend/**: Node.js, Express, MongoDB, TypeScript
+- **functions/**: Firebase Functions, TypeScript
 
 ## Setup
 
@@ -45,15 +45,15 @@ This project connects the Minecraft hosting provider Exaroton with Discord via a
       npm install
       ```
 
-    - **Backend**:
+    - **Functions**:
 
       ```bash
-      cd ../backend
+      cd ../functions
       npm install
       ```
 
 3. **Environment Variables**:
-   Create a `.env` file in each folder (`bot`, `frontend`, `backend`) with the required credentials:
+   Create a `.env` file in each folder (`bot`, `frontend`, `functions`) with the required credentials:
 
    - **bot/.env**:
 
@@ -70,11 +70,12 @@ This project connects the Minecraft hosting provider Exaroton with Discord via a
      
      ```
 
-   - **backend/.env**:
+   - **functions/.env**:
 
      ```plaintext
-     MONGODB_URI=your-mongodb-connection-string
-     EXAROTON_API_KEY=your-exaroton-api-key
+     FIREBASE_PROJECT_ID=your-firebase-project-id
+     FIREBASE_PRIVATE_KEY=your-firebase-private-key
+     FIREBASE_CLIENT_EMAIL=your-firebase-client-email
      ```
 
 4. **Start the Services**:
@@ -92,10 +93,10 @@ This project connects the Minecraft hosting provider Exaroton with Discord via a
       npm run dev
       ```
 
-    - **Backend**:
+    - **Functions**:
 
       ```bash
-      cd ../backend
+      cd ../functions
       npm run dev
       ```
 

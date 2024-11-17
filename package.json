@@ -16,7 +16,10 @@
     "build:shared": "npm run build -w shared",
     "dev:bot": "npm run dev -w bot",
     "dev:frontend": "npm run dev -w frontend",
-    "dev:backend": "npm run dev -w backend"
+    "dev:backend": "npm run dev -w backend",
+    "start:functions": "npm run start -w functions",
+    "build:functions": "npm run build -w functions",
+    "deploy:functions": "npm run deploy -w functions"
   },
   "workspaces": [
     "packages/*"
