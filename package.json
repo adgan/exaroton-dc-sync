@@ -1,0 +1,30 @@
+{
+  "name": "exaroton-dc-sync",
+  "version": "1.0.0",
+  "description": "This project connects the Minecraft hosting provider Exaroton with Discord via a bot. Users can log in with their Discord account on a frontend interface and store their Exaroton API key to manage their Exaroton servers through Discord.",
+  "scripts": {
+    "test:bot": "npm run test -w bot",
+    "test:frotend": "npm run test -w frontend",
+    "Test:backend": "npm run test -w backend",
+    "test:shared": "npm run test -w shared",
+    "start:bot": "npm run start -w bot",
+    "start:frontend": "npm run start -w frontend",
+    "start:backend": "npm run start -w backend",
+    "build:bot": "npm run build -w bot",
+    "build:frontend": "npm run build -w frontend",
+    "build:backend": "npm run build -w backend",
+    "build:shared": "npm run build -w shared",
+    "dev:bot": "npm run dev -w bot",
+    "dev:frontend": "npm run dev -w frontend",
+    "dev:backend": "npm run dev -w backend"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "author": "adgan",
+  "license": "MIT",
+  "readme": "README.md",
+  "dependencies": {
+    "exaroton-dc-sync": "file:"
+  }
+}
