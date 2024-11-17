@@ -4,20 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/app.js",
-    "dev": "npx ts-node-dev --respawn --transpile-only --exit-child src/**",
+    "start": "node packages/backend/dist/app.js",
+    "dev": "npx ts-node-dev --respawn --transpile-only --exit-child packages/backend/src/**",
     "build": "tsc",
-    "test": "tsx --test src/__tests__/*.test.ts",
-    "test:watch": "tsx --test --watch src/__tests__/*.test.ts"
+    "test": "tsx --test packages/backend/src/__tests__/*.test.ts",
+    "test:watch": "tsx --test --watch packages/backend/src/__tests__/*.test.ts"
   },
   "author": "adgan",
   "license": "MIT",
   "dependencies": {
+    "backend": "file:",
     "cors": "^2.8.5",
+    "exaroton": "^1.11.3",
     "express": "^4.21.1",
     "helmet": "^8.0.0",
-    "morgan": "^1.10.0",
-    "exaroton": "^1.11.3"
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
